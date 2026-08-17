@@ -110,7 +110,8 @@ The default bin width is rarely ideal. Experiment with the `binwidth` argument i
 
 ```{r}
 #| label: histogram-binwidth
-
+ggplot(penguins, aes(x = flipper_length_mm)) +
+  geom_histogram(binwidth = 2) + theme_bw()
 ```
 
 
