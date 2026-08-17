@@ -197,6 +197,8 @@ Recreate the above plot using `geom_point()`. Describe the overall relationship 
 ```{r}
 #| label: scatter-mass-species
 
+ggplot(penguins |> filter(!is.na(sex))) + geom_point(position = "dodge", aes(x = species, y= body_mass_g, fill = sex))
+
 ```
 
 
