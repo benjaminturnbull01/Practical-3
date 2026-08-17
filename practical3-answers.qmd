@@ -211,6 +211,8 @@ Change the previous plot so that each species is plotted separately using `facet
 ```{r}
 #| label: facet-species
 
+ggplot(penguins |> filter(!is.na(sex))) + geom_point(position = "dodge", aes(x = species, y= body_mass_g, fill = sex)) + facet_wrap(vars(species), scales = "free")
+
 ```
 
 
@@ -223,6 +225,14 @@ Use the `ggscatmat()` function from `GGally` to plot a scatter plot matrix of pa
 ```{r}
 #| label: scatmat-continuous
 
+ggscatmat(
+  penguins,
+  columns = 1:ncol(penguins),
+  color = NULL,
+  alpha = 1,
+  corMethod = "pearson"
+)
+
 ```
 
 ### Question 13
@@ -231,6 +241,14 @@ Add colouring by species to the `ggscatmat()` plot. From the plot, identify whic
 
 ```{r}
 #| label: scatmat-species-colour
+
+ggscatmat(
+  penguins,
+  columns = 1:ncol(penguins),
+  color = "species",
+  alpha = 1,
+  corMethod = "pearson"
+)
 
 ```
 
