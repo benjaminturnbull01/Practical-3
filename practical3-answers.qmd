@@ -138,6 +138,8 @@ Modify your bar chart to map the `fill` aesthetic to `island`. What does the res
 ```{r}
 #| label: bar-species-island
 
+ggplot(penguins) + geom_bar(position = "dodge", aes(x = species, fill = island))
+
 ```
 
 
