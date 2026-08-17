@@ -163,8 +163,9 @@ Map the `fill` aesthetic in your previous boxplot to `sex`. What happens to the 
 ```{r}
 #| label: boxplot-mass-species-sex
 
-```
+ggplot(penguins) + geom_boxplot(position = "dodge", aes(x = species, y= body_mass_g, fill = sex))
 
+```
 
 
 
