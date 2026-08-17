@@ -98,9 +98,9 @@ Using `geom_histogram()`, plot the distribution of `flipper_length_mm`. What sha
 #| label: histogram-flipper-length
 
 ggplot(penguins, aes(x = flipper_length_mm)) +
-  geom_histogram()
+  geom_histogram() + theme_bw()
 ```
-
+Bimodal. Some outliers. 
 
 
 
