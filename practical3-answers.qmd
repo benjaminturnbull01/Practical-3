@@ -152,6 +152,8 @@ Use `geom_boxplot()` to compare the distribution of `body_mass_g` across the thr
 ```{r}
 #| label: boxplot-mass-species
 
+ggplot(penguins) + geom_boxplot(position = "dodge", aes(x = species, y= body_mass_g))
+
 ```
 
 ### Question 8
