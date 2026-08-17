@@ -71,6 +71,18 @@ Summarise the data variables in the dataset. What variables exist? What are thei
 ```{r}
 #| label: summarise-variables
 
+glimpse(penguins)
+summary(penguins)
+str(penguins)
+penguins |>
+  summarise(across(where(is.numeric),
+                    list(mean = mean, sd = sd, min = min, max = max, median = median),
+                    na.rm = TRUE))
+penguins |>
+  summarise(across(where(is.numeric),
+                    list(mean = mean),
+                    na.rm = TRUE))
+
 ```
 
 
