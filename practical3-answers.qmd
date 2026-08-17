@@ -177,7 +177,9 @@ Remove the missing values in the previous plot by filtering. Is this good practi
 #| label: boxplot-remove-missing
 
 # add filter for other column with missing data
-penguins |> filter(is.na(sex))
+penguins |> filter(is.na(sex)) 
+
+ggplot(penguins |> filter(!is.na(sex))) + geom_boxplot(position = "dodge", aes(x = species, y= body_mass_g, fill = sex))
 
 # Or (use carefully) look at tidyr::drop_na() 
 
