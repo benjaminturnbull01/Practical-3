@@ -124,10 +124,10 @@ Using `geom_bar()`, visualise the count of penguins belonging to each species. W
 ```{r}
 #| label: bar-species-count
 
-# ggplot(...) + geom_bar(aes(x = ... ))
+ggplot(penguins) + geom_bar(aes(x = species))
 
 ```
-
+Adelie is the most common species. 
 
 
 
