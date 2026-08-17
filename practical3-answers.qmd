@@ -52,9 +52,15 @@ _You can use `naniar::gg_miss_upset(...)` or other functions you've come across 
 
 ```{r}
 #| label: inspect-missingness
+naniar::gg_miss_upset(penguins)
+
+penguins |>
+  filter(if_any(everything(), is.na))
+
+summary(penguins$sex)
 
 ```
-
+Eleven penguins have missing data. Two of those penguins have bill length, bill depth, flipper length, body mass, and sex missing. Nine of those penguins only have sex missing.
 
 
 
